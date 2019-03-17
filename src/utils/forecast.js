@@ -9,7 +9,7 @@ const forecast = (lat, long, callback) => {
         } else if(body.error) {
             callback('Invalid input', undefined);
         } else {
-            callback(undefined,`It is currently ${body.currently.temperature} degrees out.
+            callback(undefined,` ${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out.
             There is a ${body.currently.precipProbability} % chance of rain`);
         }
     });
